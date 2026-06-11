@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+/* ============================================
+   DESIGN TOKENS — Towing & Roadside Assistance
+   Edit values here to rebrand the entire site.
+   ============================================ */
+
+@theme {
+  /* ---------- BRAND COLORS ---------- */
+  /* Primary — Emergency Red */
+  --color-brand-red: #DC2626;
+  --color-brand-red-dark: #991B1B;
+  --color-brand-red-darker: #7F1D1D;
+  --color-brand-red-light: #FEE2E2;
+  --color-brand-red-lighter: #FEF2F2;
+
+  /* Secondary Accent — Caution Amber */
+  --color-brand-amber: #FBBF24;
+  --color-brand-amber-dark: #D97706;
+  --color-brand-amber-light: #FEF3C7;
+
+  /* ---------- NEUTRAL / SURFACE ---------- */
+  --color-ink-900: #0A0A0A;
+  --color-ink-800: #171717;
+  --color-ink-700: #262626;
+  --color-ink-600: #404040;
+  --color-ink-500: #525252;
+  --color-ink-400: #737373;
+  --color-ink-300: #A3A3A3;
+  --color-ink-200: #D4D4D4;
+  --color-ink-100: #E5E5E5;
+  --color-ink-50:  #F5F5F5;
+
+  --color-surface-white: #FFFFFF;
+  --color-surface-muted: #FAFAFA;
+  --color-surface-card:  #FFFFFF;
+  --color-surface-dark:  #0A0A0A;
+
+  /* ---------- SEMANTIC ---------- */
+  --color-success: #16A34A;
+  --color-warning: #F59E0B;
+  --color-danger:  #DC2626;
+  --color-info:    #2563EB;
+
+  /* ---------- TYPOGRAPHY ---------- */
+  --font-display: var(--font-barlow-condensed), "Barlow Condensed", Impact, sans-serif;
+  --font-sans:    var(--font-inter), Inter, system-ui, -apple-system, sans-serif;
+
+  /* ---------- RADIUS ---------- */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+
+  /* ---------- SHADOWS ---------- */
+  --shadow-card:    0 1px 3px 0 rgb(0 0 0 / 0.08), 0 1px 2px -1px rgb(0 0 0 / 0.05);
+  --shadow-elevated: 0 10px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.05);
+  --shadow-red-glow: 0 10px 30px -10px rgb(220 38 38 / 0.5);
+
+  /* ---------- CONTAINER ---------- */
+  --container-narrow: 720px;
+  --container-default: 1200px;
+  --container-wide: 1440px;
+}
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-ink-800);
+  background: var(--color-surface-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  color: var(--color-ink-900);
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+.container-default {
+  width: 100%;
+  max-width: var(--container-default);
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+@media (min-width: 768px) {
+  .container-default { padding-inline: 2rem; }
+}
+
+.section-padding {
+  padding-block: 4rem;
+}
+@media (min-width: 768px) {
+  .section-padding { padding-block: 6rem; }
+}
+
+/* Emergency pulse animation */
+@keyframes pulse-red {
+  0%, 100% { box-shadow: 0 0 0 0 rgb(220 38 38 / 0.7); }
+  50%      { box-shadow: 0 0 0 12px rgb(220 38 38 / 0); }
+}
+.animate-pulse-red {
+  animation: pulse-red 2s infinite;
+}
